@@ -14,12 +14,12 @@ Python 3.6.4 |Anaconda, Inc.| (default, Jan 16 2018, 12:04:33)
 Type "help", "copyright", "credits" or "license" for more information.
 ### 辞書の作成
 >>> e2f = {
-...     "chien": "dog",   ### 仏/chien: 英/dog
-...     "chat": "cat",    ### 仏/chat: 英/cat
-...     "morse": "walrus,"   ### 仏/morse: 英/walrus
-... }   ### 辞書の末尾
->>> e2f   ### 辞書を表示
-{'chien': 'dog', 'chat': 'cat', 'morse': 'walrus,'}
+...     "dog": "chien",  ### 英/dog: 仏/chien
+...     "cat": "chat",   ### 英/cat: 仏/chat
+...     "walrus": "morse",   ### 英/walrus: 仏/morse
+... }
+>>> e2f   ### 辞書の表示
+{'dog': 'chien', 'cat': 'chat', 'walrus': 'morse'}
 >>> 
 
 """
