@@ -7,8 +7,8 @@ class Element():
     #  初期化メソッドを定義
     def __init__(self, name, symbol, number):
         self.name = name # 属性の追加
-        self.symbol = symbol　# 属性の追加
-        self.number = number　# 属性の追加
+        self.symbol = symbol # 属性の追加
+        self.number = number # 属性の追加
 
 # オブジェクトの作成
 element = Element('Hydrogen', 'H', 1)
