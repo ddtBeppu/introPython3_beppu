@@ -21,7 +21,7 @@ class Element():
 
 
 # オブジェクトの作成
-element = Element('Hydrogen', 'H', 1)
+hydrogen = Element('Hydrogen', 'H', 1)
 
 # 属性を表示するメソッドの実行
-element.dump()
+hydrogen.dump()
