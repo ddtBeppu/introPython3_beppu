@@ -9,7 +9,7 @@ Python 3.6.4 |Anaconda, Inc.| (default, Jan 16 2018, 12:04:33)
 [GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 
-# mysteryに値をだいにゅう
+# mysteryに値を代入
 >>> mystery = '\U0001f4a9'
 # mysteryを表示
 >>> mystery
