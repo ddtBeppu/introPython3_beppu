@@ -43,3 +43,14 @@ with open('../e08_05/books', 'rt') as fin:
     cursor.close()
     # dbを閉じる
     conn.close()
+
+# 実行結果
+"""
+NaotonoMacBook-puro:e08_09 naotobeppu$ python e08_09.py 
+[('The Weirdstone of Brisingamen', 'Alan Garner', 1960),
+ ('Small Gods', 'Terry Pratchett', 1992),
+ ('Perdido Street Station', 'china Mieville', 2000),
+ ('Thud!', 'Terry Pratchett', 2005),
+ ('The Spellman Files', 'Lisa Lutz', 2007),
+ ('title', 'author', 'year')]
+ """
