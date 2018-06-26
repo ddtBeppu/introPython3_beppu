@@ -11,7 +11,7 @@ cursor = conn.cursor()
 
 # dbにテーブルbookを作成するsql文を定義
 insert_sql = 'CREATE TABLE book (title VARCHAR(20), author VARCHAR(20), year INT)'
-#insert_sql = 'DELETE TABLE book'
+
 # 実行する
 cursor.execute(insert_sql)
 
