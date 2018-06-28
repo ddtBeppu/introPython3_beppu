@@ -21,7 +21,7 @@ books = [
     ['Small Gods', 'Terry Pratchett', '1992'],
 ]
 
-with open('books', 'wt') as fout2:
+with open('books.csv', 'wt') as fout2:
     # 書き込む対象を設定
     csvout = csv.writer(fout2)
     # e08_03で作成した内容の次の行から今回のbooksの内容を表示
