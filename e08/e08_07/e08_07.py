@@ -21,6 +21,7 @@ with open('../e08_05/books', 'rt') as fin:
         insert_sql = 'INSERT INTO book (title, author, year) VALUES(?, ?, ?)'
         # 実行
         cursor.execute(insert_sql, row)
+    conn.commit()
     
     # テーブルに内容が挿入されたことを確認する。
     # SQL文を作成
