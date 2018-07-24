@@ -7,28 +7,33 @@
 
 import redis
 import time
-from datetime import datetime, date
+from datetime import datetime
+from time import sleep
 
+# redisサーバーに接続
 conn = redis.Redis()
+# タイムアウトの時間(秒)
+timeout = 10
 
+print("start!")
 while True:
-    msg = conn.blpop('chocolate')
-    if not msg:
-        break
+    # ルーシーがチョコレートを包むのにかかる時間だけ待つ
+    sleep(0.5)
+    # チョコレートのリストからポップする
+    msg = conn.blpop("chocos", timeout)
+    # 残りの個数を求める
+    stock = conn.llen("chocos")
 
-    val = msg[1].decode('utf-8')
-    if val == 'quit':
-        break
+    # メッセージを受信したら
+    if msg:
+        # メッセージの2番目の要素(ポップしたチョコレート)
+        out = msg[1]
+        # 包んだチョコレートを表示
+        print("Got ", out, "chocolate")
+        # 残り個数を表示
+        print(stock, "remains.")
 
-    print("Got ", val)
-
-    # 日時の表示形式を定義
-    time_fmt = "%A, %B, %d, %Y, %I:%M:%S%p"
-    # 現在時刻を取得
-    now_utc = datetime.utcnow()
-    # フォーマットにしたがって、日時の値を文字列にする
-    now = now_utc.strftime(time_fmt)
-
-    # 文字列をエンコード
-    now_time = now.encode('utf-8')
-    print("It's ", now_time)
+        # 現在時刻を取得
+        now_utc = datetime.utcnow()
+        # 現在時刻を表示
+        print("It's ", now_utc)

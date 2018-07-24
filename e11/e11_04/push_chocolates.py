@@ -6,9 +6,15 @@
 # 残っているチョコが何個あるかを表示しよう。
 
 import redis
+import random
+from time import sleep
 
+# Redisサーバーに接続
 conn = redis.Redis()
 
+# プッシュ開始
+print("start pushing chocolates!!")
+# 以下のチョコレートを順にプッシュ
 chocolates = ["dark", 
                 "milk", 
                 "white", 
@@ -18,10 +24,11 @@ chocolates = ["dark",
                 "quality handcrafted gourmet",
                 ]
 
-for chocolate in chocolates:
-    msg = chocolate.encode('utf-8')
-    conn.rpush('chocolate', msg)
-
-conn.rpush('chocolate', 'quit')
-
-print('Out of demand!')
+# 
+while True:
+    # 待ち時間を設けてプッシュする個数の調整
+    sleep(random.random())
+    # chocolatesリストからチョコレートを抜き出す
+    choco = random.choice(chocolates)
+    # プッシュする
+    conn.rpush("chocos", choco)
