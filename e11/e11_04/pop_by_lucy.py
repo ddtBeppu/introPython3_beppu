@@ -14,11 +14,12 @@ from time import sleep
 conn = redis.Redis()
 # タイムアウトの時間(秒)
 timeout = 10
+waiting_time = 0.5
 
 print("start!")
 while True:
     # ルーシーがチョコレートを包むのにかかる時間だけ待つ
-    sleep(0.5)
+    sleep(waiting_time)
     # チョコレートのリストからポップする
     msg = conn.blpop("chocos", timeout)
     # 残りの個数を求める
