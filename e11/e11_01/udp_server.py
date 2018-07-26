@@ -13,8 +13,6 @@ max_size = 150
 
 # サーバーの処理開始を知らせる
 print('Starting the server at', datetime.now())
-# クライアントからの通信を待つ
-print('Waiting for a client to call.')
 
 # ソケットを作る
 server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -22,6 +20,7 @@ server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server.bind(server_address)
 
 # クライアントからのデータを待つ
+print('Waiting for a client to call.')
 data, client = server.recvfrom(max_size)
 
 # 日時の表示形式を定義
